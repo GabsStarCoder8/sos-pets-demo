@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadastro_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -146,7 +147,14 @@ class LoginScreen extends StatelessWidget {
                           vertical: 12,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CadastroScreen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'Cadastrar-se',
                         style: TextStyle(
