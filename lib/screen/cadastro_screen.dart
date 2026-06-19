@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class CadastroScreen extends StatelessWidget {
   const CadastroScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Usando a mesma cor azul padrão do seu app
+    //cor azul
     const Color primaryColor = Color(0xFF2D6A9F);
 
     return Scaffold(
       backgroundColor: Colors.white,
-      // O AppBar vazio com cor de fundo branca e elevação zero serve apenas
-      // para colocar automaticamente a "setinha de voltar" no topo da tela!
+      // O AppBar
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -21,11 +21,10 @@ class CadastroScreen extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
-            // Diferente da tela de login onde tudo era centralizado,
-            // aqui nós alinhamos os itens à esquerda (start) por causa dos títulos (Nome, Sobrenome, etc)
+            //
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. TÍTULO
+              // Título
               const Text(
                 'Novo usuário!',
                 style: TextStyle(
@@ -36,7 +35,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
 
-              // 2. CAMPO: NOME
+              //Campo: nome
               const Text(
                 'Nome',
                 style: TextStyle(
@@ -62,7 +61,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              // 3. CAMPO: SOBRENOME
+              //Campo: sobrenome
               const Text(
                 'Sobrenome',
                 style: TextStyle(
@@ -88,7 +87,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              // 4. CAMPO: E-MAIL
+              //Campo:e-mail
               const Text(
                 'E-mail',
                 style: TextStyle(
@@ -115,7 +114,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              // 5. CAMPO: SENHA E CONFIRMAR SENHA
+              //Campo: Senha e Confirma Senja
               const Text(
                 'Crie sua senha',
                 style: TextStyle(
@@ -126,7 +125,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               TextField(
-                obscureText: true, // Esconde o texto
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Senha...',
                   hintStyle: const TextStyle(color: Color(0xFF5A809E)),
@@ -142,7 +141,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               TextField(
-                obscureText: true, // Esconde o texto
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Repita a senha...',
                   hintStyle: const TextStyle(color: Color(0xFF5A809E)),
@@ -158,7 +157,7 @@ class CadastroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              // 6. BOTÃO FINALIZAR
+              // Botão Finalizar
               SizedBox(
                 width: double.infinity,
                 height: 55,
@@ -170,7 +169,13 @@ class CadastroScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Ação de finalizar o cadastro
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                      (Route<dynamic> route) => false,
+                    );
                   },
                   child: const Text(
                     'Finalizar',
@@ -182,9 +187,7 @@ class CadastroScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ), // Um espacinho extra no final para o scroll ficar confortável
+              const SizedBox(height: 20),
             ],
           ),
         ),
