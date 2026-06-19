@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'cadastro_pet_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -228,6 +229,18 @@ class HomeScreen extends StatelessWidget {
             label: 'Send',
           ),
         ],
+        onTap: (int index) {
+          // O Flutter avisa qual botão foi clicado através desse 'index'
+          if (index == 1) {
+            // Se o index for 1 (AddDog), abre a tela de cadastro!
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CadastroPetScreen(),
+              ),
+            );
+          }
+        },
       ),
     );
   }
