@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"sos-pets-demo","appId":"1:657926389763:android:c1a7468d13a35006614e36","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"sos-pets-demo","configurations":{"android":"1:657926389763:android:c1a7468d13a35006614e36","ios":"1:657926389763:ios:ce92e4c3de95bcb8614e36"}}}}}}

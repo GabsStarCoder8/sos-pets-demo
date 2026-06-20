@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657926389763",
+    "project_id": "sos-pets-demo",
+    "storage_bucket": "sos-pets-demo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657926389763:android:c1a7468d13a35006614e36",
+        "android_client_info": {
+          "package_name": "com.example.sos_pets_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqasUAIAKMmQBQpnJZRfAfxKUVzg_-o3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
