@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'cadastro_pet_screen.dart';
+import 'meus_pets_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const Color primaryColor = Color(0xFF2D6A9F);
-    const Color lightBlue = Color(0xFFABCBE5); //azul escuro
+    const Color lightBlue = Color(0xFFABCBE5);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -48,7 +49,6 @@ class HomeScreen extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            //icon paw
                             Material(
                               color: Colors.transparent,
                               child: InkWell(
@@ -56,7 +56,13 @@ class HomeScreen extends StatelessWidget {
                                 splashColor: Colors.white.withOpacity(0.4),
                                 highlightColor: Colors.white.withOpacity(0.1),
                                 onTap: () {
-                                  print('Click paw');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const MeusPetsScreen(),
+                                    ),
+                                  );
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(6.0),
@@ -68,10 +74,8 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
 
-                            //espaço entre icons
                             const SizedBox(width: 12),
 
-                            //icons person
                             Material(
                               color: Colors.transparent,
                               child: InkWell(
@@ -96,7 +100,6 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                //Fundo branco
                 Expanded(
                   child: Center(
                     child: SvgPicture.asset(
@@ -108,7 +111,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
-            //Barra de pesquisa
             Positioned(
               top: 115,
               left: 24,
@@ -129,7 +131,6 @@ class HomeScreen extends StatelessWidget {
                 child: TextField(
                   textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
-                    //lupa icon
                     prefixIcon: const Padding(
                       padding: EdgeInsetsGeometry.all(12.0),
                       child: Icon(Icons.search, color: Colors.grey, size: 28),
@@ -148,7 +149,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      //navbar de navegação
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
@@ -175,7 +175,6 @@ class HomeScreen extends StatelessWidget {
             label: 'Home',
           ),
 
-          //Icone de add dog
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/icons/add-dog.svg',
@@ -193,7 +192,6 @@ class HomeScreen extends StatelessWidget {
             label: 'AddDog',
           ),
 
-          //Icone de localização
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/icons/icon-loc.svg',
@@ -211,7 +209,6 @@ class HomeScreen extends StatelessWidget {
             label: 'Localização',
           ),
 
-          //Icone de mensagem
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/icons/send-icon.svg',
@@ -230,9 +227,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
         onTap: (int index) {
-          // O Flutter avisa qual botão foi clicado através desse 'index'
           if (index == 1) {
-            // Se o index for 1 (AddDog), abre a tela de cadastro!
             Navigator.push(
               context,
               MaterialPageRoute(
